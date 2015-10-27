@@ -1,8 +1,11 @@
 $(document).ready(function(){
 
 	$(".international").on("click",function(){
-
-		console.log("international");
 		$("#slide-down").show();
+		$("#politics-drop").hide();
+		$("#business-drop").hide();
+		$("#technology-drop").hide();
+		$("#culture-drop").hide();
+		$("#blogs-drop").hide();
 	});
 });

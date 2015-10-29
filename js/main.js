@@ -7,5 +7,7 @@ $(document).ready(function(){
 		$("#technology-drop").hide();
 		$("#culture-drop").hide();
 		$("#blogs-drop").hide();
+
+		$(this).css("background", "#666");
 	});
 });

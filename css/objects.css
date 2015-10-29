@@ -25,6 +25,8 @@
 #page-header nav ul {
 	float: left;
 }
+
+/* Target this for changing nav item background to dark grey */
 #page-header nav ul li {
 	float: left;
 }

@@ -72,6 +72,8 @@
 	display: none;
 	overflow: hidden;
 	background: #666;
+
+	/* Example article title text below the image */
 	color: white;
 	border-bottom: 1px solid black;
 }

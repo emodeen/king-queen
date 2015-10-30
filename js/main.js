@@ -8,8 +8,7 @@ $(document).ready(function(){
 			
 			$(".international").removeClass("active");
 			$("#slide-down").slideUp();
-
-			console.log("has class active");
+			$(this).css("background", "#FFF");
 		}
 
 		else {

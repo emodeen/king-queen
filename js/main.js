@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$(".international").on("click",function(event){
+	$("#page-header .international").on("click",function(event){
 
 		event.preventDefault();
 

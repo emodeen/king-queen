@@ -6,6 +6,7 @@ $(document).ready(function(){
 			
 			$(".international").removeClass("active");
 			$("#slide-down").hide();
+			$(this).css("background", "#FFF");
 			console.log("has class active");
 		}
 

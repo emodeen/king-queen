@@ -11,7 +11,7 @@ $(document).ready(function(){
 		}
 
 		else {
-			$("#slide-down").show();
+			$("#slide-down").slideDown();
 			$("#politics-drop").hide();
 			$("#business-drop").hide();
 			$("#technology-drop").hide();

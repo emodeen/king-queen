@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-	$(".international").on("click",function(){
+	$(".international").on("click",function(event){
+
+		event.preventDefault();
 
 		if ($(".international").hasClass("active")) {
 			

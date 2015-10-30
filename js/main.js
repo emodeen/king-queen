@@ -5,7 +5,7 @@ $(document).ready(function(){
 		if ($(".international").hasClass("active")) {
 			
 			$(".international").removeClass("active");
-			$("#slide-down").hide();
+			$("#slide-down").slideUp();
 			$(this).css("background", "#FFF");
 			console.log("has class active");
 		}

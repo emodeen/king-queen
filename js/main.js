@@ -43,9 +43,26 @@ function start(event) {
 function turn(event) {
 	event.preventDefault();
 	console.log("turn card");
+
+	$('#pic1').attr('src', 'img/King.png');
 }
 
 $(document).ready(function() {
 	$("#primary-nav .international").on("click",start);
 	$(".card").on("click",turn);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
-	$("#page-header .international").on("click",function(event){
+	$("#primary-nav .international").on("click",function(event){
 
 		event.preventDefault();
-		$("#page-header .international").siblings().removeClass("active");
-		$("#page-header .international").toggleClass("active");
+		$("#primary-nav .international").siblings().removeClass("active");
+		$("#primary-nav .international").siblings().css("background", "FFF");
+		$("#primary-nav .international").toggleClass("active");
 
-		if ($(".international").hasClass("active")) {
-
+		if ($("#primary-nav .international").hasClass("active")) {
 			$("#slide-down").slideDown();
+			$("#international-drop").show();
 			$("#politics-drop").hide();
 			$("#business-drop").hide();
 			$("#technology-drop").hide();
@@ -22,18 +23,14 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#page-header .politics").on("click",function(event){
+	$("#primary-nav .politics").on("click",function(event){
 
 		event.preventDefault();
-		$("#page-header .politics").siblings().removeClass("active");
-		$("#page-header .politics").toggleClass("active");		
+		$("#primary-nav .politics").siblings().removeClass("active");
+		$("#primary-nav .politics").siblings().css("background", "FFF");
+		$("#primary-nav .politics").toggleClass("active");		
 
-		if ($(".politics").hasClass("active")) {
-			$(".politics").removeClass("active");
-			$("#slide-down").slideUp();
-			$(this).css("background", "#FFF");
-		}
-		else {
+		if ($("#primary-nav .politics").hasClass("active")) {
 			$("#slide-down").slideDown();
 			$("#politics-drop").show();
 			$("#international-drop").hide();
@@ -42,7 +39,10 @@ $(document).ready(function(){
 			$("#culture-drop").hide();
 			$("#blogs-drop").hide();
 			$(this).css("background", "#666");
-			$(".politics").addClass("active");			
+		}
+		else {
+			$("#slide-down").slideUp();
+			$(this).css("background", "#FFF");	
 		}
 	});
 

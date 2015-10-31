@@ -1,8 +1,6 @@
-$(document).ready(function(){
-
-	$("#primary-nav .international").on("click",function(event){
-
+function start(event) {
 		event.preventDefault();
+		
 		$("#primary-nav .international").siblings().removeClass("active");
 		$("#primary-nav .international").siblings().css("background", "FFF");
 		$("#primary-nav .international").toggleClass("active");
@@ -40,5 +38,10 @@ $(document).ready(function(){
 			
 			$('#slide-down .drop.open').removeClass('open');
 		}
-	});
+}
+
+
+$(document).ready(function() {
+	$("#primary-nav .international").on("click",start);
+
 });

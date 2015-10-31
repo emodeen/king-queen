@@ -9,7 +9,6 @@ $(document).ready(function(){
 
 		// If the nav item is active
 		if ($("#primary-nav .international").hasClass("active")) {
-console.log('international active');
 			// If content is open
 			if($('#slide-down').hasClass('open')) { 
 
@@ -19,8 +18,6 @@ console.log('international active');
 
 				// Add open class to all elements having both class drop and class international
 				$('.drop.international').show().addClass('open');
-
-				//$('#slide-down').slideUp().removeClass('open');
 			} 
 
 			// If the content is not open
@@ -39,13 +36,9 @@ console.log('international active');
 
 		// If the nav item is not active		
 		else {
-
-console.log('international not active');			
 			$("#slide-down").slideUp().removeClass('open');
 			
 			$('#slide-down .drop.open').removeClass('open');
-
-			//$("#primary-nav .international").addClass("active");
 		}
 	});
 
@@ -57,7 +50,6 @@ console.log('international not active');
 
 		// If the nav item is active
 		if ($("#primary-nav .politics").hasClass("active")) {
-console.log('politics active');
 			// If content is open
 			if($('#slide-down').hasClass('open')) { 
 
@@ -87,8 +79,49 @@ console.log('politics active');
 
 		// If the nav item is not active		
 		else {
+			$("#slide-down").slideUp().removeClass('open');
+			
+			$('#slide-down .drop.open').removeClass('open');
+		}
+	});
 
-console.log('politics not active');			
+	$("#primary-nav .business").on("click",function(event){
+		event.preventDefault();
+		$("#primary-nav .business").siblings().removeClass("active");
+		$("#primary-nav .business").siblings().css("background", "FFF");
+		$("#primary-nav .business").toggleClass("active");
+
+		// If the nav item is active
+		if ($("#primary-nav .business").hasClass("active")) {
+			// If content is open
+			if($('#slide-down').hasClass('open')) { 
+
+				// .drop.open finds elements within #slide-down that have class drop and class open
+				// Hide all other sections, and remove class open for all other sections 
+				$('#slide-down .drop.open').hide().removeClass('open');
+
+				// Add open class to all elements having both class drop and class business
+				$('.drop.business').show().addClass('open');
+
+				//$('#slide-down').slideUp().removeClass('open');
+			} 
+
+			// If the content is not open
+			else { 
+
+				// Hide sections with class drop
+				$('#slide-down .drop').hide();
+
+				// Add class open to business section
+				$('.drop.business').show().addClass('open');
+
+				// Slide down content, and add class open to the section div
+				$('#slide-down').slideDown(150).addClass('open');			
+			}
+		}
+
+		// If the nav item is not active		
+		else {
 			$("#slide-down").slideUp().removeClass('open');
 			
 			$('#slide-down .drop.open').removeClass('open');

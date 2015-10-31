@@ -128,4 +128,48 @@ $(document).ready(function(){
 		}
 	});
 
+	$("#primary-nav .technology").on("click",function(event){
+		event.preventDefault();
+		$("#primary-nav .technology").siblings().removeClass("active");
+		$("#primary-nav .technology").siblings().css("background", "FFF");
+		$("#primary-nav .technology").toggleClass("active");
+
+		// If the nav item is active
+		if ($("#primary-nav .technology").hasClass("active")) {
+			// If content is open
+			if($('#slide-down').hasClass('open')) { 
+
+				// .drop.open finds elements within #slide-down that have class drop and class open
+				// Hide all other sections, and remove class open for all other sections 
+				$('#slide-down .drop.open').hide().removeClass('open');
+
+				// Add open class to all elements having both class drop and class technology
+				$('.drop.technology').show().addClass('open');
+
+				//$('#slide-down').slideUp().removeClass('open');
+			} 
+
+			// If the content is not open
+			else { 
+
+				// Hide sections with class drop
+				$('#slide-down .drop').hide();
+
+				// Add class open to technology section
+				$('.drop.technology').show().addClass('open');
+
+				// Slide down content, and add class open to the section div
+				$('#slide-down').slideDown(150).addClass('open');			
+			}
+		}
+
+		// If the nav item is not active		
+		else {
+			$("#slide-down").slideUp().removeClass('open');
+			
+			$('#slide-down .drop.open').removeClass('open');
+		}
+	});
+
+
 });

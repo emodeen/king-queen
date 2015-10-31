@@ -20,7 +20,7 @@ console.log('international active');
 				// Add open class to all elements having both class drop and class international
 				$('.drop.international').show().addClass('open');
 
-				$('#slide-down').slideUp().removeClass('open');
+				//$('#slide-down').slideUp().removeClass('open');
 			} 
 
 			// If the content is not open
@@ -50,29 +50,48 @@ console.log('international not active');
 	});
 
 	$("#primary-nav .politics").on("click",function(event){
-
 		event.preventDefault();
 		$("#primary-nav .politics").siblings().removeClass("active");
-		
-		// see what siblings() is doing here
-		$("#primary-nav .politics").siblings(".international").css("background", "FFF");
-		$("#international-drop").css("background", "#FFF");
-		$("#international-drop").hide();
-		$("#primary-nav .politics").toggleClass("active");		
+		$("#primary-nav .politics").siblings().css("background", "FFF");
+		$("#primary-nav .politics").toggleClass("active");
 
+		// If the nav item is active
 		if ($("#primary-nav .politics").hasClass("active")) {
-			$("#slide-down").slideDown();
-			$("#politics-drop").show();
-			$("#international-drop").hide();
-			$("#business-drop").hide();
-			$("#technology-drop").hide();
-			$("#culture-drop").hide();
-			$("#blogs-drop").hide();
-			$("#primary-nav .politics").css("background", "#666");
+console.log('politics active');
+			// If content is open
+			if($('#slide-down').hasClass('open')) { 
+
+				// .drop.open finds elements within #slide-down that have class drop and class open
+				// Hide all other sections, and remove class open for all other sections 
+				$('#slide-down .drop.open').hide().removeClass('open');
+
+				// Add open class to all elements having both class drop and class politics
+				$('.drop.politics').show().addClass('open');
+
+				//$('#slide-down').slideUp().removeClass('open');
+			} 
+
+			// If the content is not open
+			else { 
+
+				// Hide sections with class drop
+				$('#slide-down .drop').hide();
+
+				// Add class open to politics section
+				$('.drop.politics').show().addClass('open');
+
+				// Slide down content, and add class open to the section div
+				$('#slide-down').slideDown(150).addClass('open');			
+			}
 		}
+
+		// If the nav item is not active		
 		else {
-			$("#slide-down").slideUp();
-			$("#primary-nav .politics").css("background", "#FFF");	
+
+console.log('politics not active');			
+			$("#slide-down").slideUp().removeClass('open');
+			
+			$('#slide-down .drop.open').removeClass('open');
 		}
 	});
 

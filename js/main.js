@@ -40,8 +40,12 @@ function start(event) {
 		}
 }
 
+function turn(event) {
+	event.preventDefault();
+	console.log("turn card");
+}
 
 $(document).ready(function() {
 	$("#primary-nav .international").on("click",start);
-
+	$(".card").on("click",turn);
 });

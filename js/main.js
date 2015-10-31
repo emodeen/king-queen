@@ -15,11 +15,11 @@ $(document).ready(function(){
 			$("#technology-drop").hide();
 			$("#culture-drop").hide();
 			$("#blogs-drop").hide();
-			$(this).css("background", "#666");
+			$("#primary-nav .international").css("background", "#666");
 		}
 		else {
 			$("#slide-down").slideUp();
-			$(this).css("background", "#FFF");			
+			$("#primary-nav .international").css("background", "#FFF");			
 		}
 	});
 
@@ -38,11 +38,11 @@ $(document).ready(function(){
 			$("#technology-drop").hide();
 			$("#culture-drop").hide();
 			$("#blogs-drop").hide();
-			$(this).css("background", "#666");
+			$("#primary-nav .politics").css("background", "#666");
 		}
 		else {
 			$("#slide-down").slideUp();
-			$(this).css("background", "#FFF");	
+			$("#primary-nav .politics").css("background", "#FFF");	
 		}
 	});
 

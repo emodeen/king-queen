@@ -32,6 +32,7 @@ $(document).ready(function(){
 		}
 		else {
 			$("#slide-down").slideDown();
+			$("#politics-drop").show();
 			$("#international-drop").hide();
 			$("#business-drop").hide();
 			$("#technology-drop").hide();

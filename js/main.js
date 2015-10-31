@@ -40,6 +40,14 @@ function start(event) {
 		}
 }
 
+/* Show the back of all cards */
+function reset() {
+	$("#pic1").attr('src', 'img/back-of-card.png');
+	$("#pic2").attr('src', 'img/back-of-card.png');
+	$("#pic3").attr('src', 'img/back-of-card.png');
+	$("#pic4").attr('src', 'img/back-of-card.png');	
+}
+
 function turn(event) {
 	event.preventDefault();
 
@@ -51,8 +59,8 @@ function turn(event) {
 
 $(document).ready(function() {
 	$("#primary-nav .international").on("click",start);
-	
 	$(".card").on("click",turn);
+	$("#reset").on("click",reset);
 });
 
 

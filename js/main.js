@@ -40,40 +40,19 @@ function start(event) {
 		}
 }
 
-function turnFirst(event) {
+function turn(event) {
 	event.preventDefault();
-	console.log("turn card");
 
-	$('#pic1').attr('src', 'img/King.png');
-}
+	var whichImg = $(this).attr('id');
+	console.log(whichImg);
 
-function turnSecond(event) {
-	event.preventDefault();
-	console.log("turn card");
-
-	$('#pic2').attr('src', 'img/Queen.png');
-}
-
-function turnThird(event) {
-	event.preventDefault();
-	console.log("turn card");
-
-	$('#pic3').attr('src', 'img/King.png');
-}
-
-function turnFourth(event) {
-	event.preventDefault();
-	console.log("turn card");
-
-	$('#pic4').attr('src', 'img/Queen.png');
+	$("#"+whichImg+"").attr('src', 'img/Queen.png');
 }
 
 $(document).ready(function() {
 	$("#primary-nav .international").on("click",start);
-	$("#pic1").on("click",turnFirst);
-	$("#pic2").on("click",turnSecond);
-	$("#pic3").on("click",turnThird);
-	$("#pic4").on("click",turnFourth);
+	
+	$(".card").on("click",turn);
 });
 
 

@@ -1,3 +1,5 @@
+var cards = [];
+
 function start(event) {
 		event.preventDefault();
 		
@@ -45,16 +47,51 @@ function reset() {
 	$("#pic1").attr('src', 'img/back-of-card.png');
 	$("#pic2").attr('src', 'img/back-of-card.png');
 	$("#pic3").attr('src', 'img/back-of-card.png');
-	$("#pic4").attr('src', 'img/back-of-card.png');	
+	$("#pic4").attr('src', 'img/back-of-card.png');
+
+	// empty the cards array	
+}
+
+function checkForMatch(card) {
+
+	var numKings = 0;
+	var numQueens = 0;
+
+	cards.push(card);
+
+	cards.forEach(function(entry) {
+		// if queen, increment queen count
+		if (entry === 'queen') {
+			numQueens++;
+		}
+		// else, increment king count
+		else {
+			numKings++;
+		}
+
+		// check if there is a match
+		if ((numQueens === 2) || (numKings === 2)) {
+			// inform user that they found a match
+			window.alert("You found a match!");
+		}
+    });
 }
 
 function turn(event) {
 	event.preventDefault();
 
 	var whichImg = $(this).attr('id');
-	console.log(whichImg);
+	var card = 'queen';
 
-	$("#"+whichImg+"").attr('src', 'img/Queen.png');
+	if (card === 'queen') {
+		$("#"+whichImg+"").attr('src', 'img/Queen.png');
+	}
+
+	else {
+		$("#"+whichImg+"").attr('src', 'img/King.png');
+	}
+
+	checkForMatch(card);
 }
 
 $(document).ready(function() {

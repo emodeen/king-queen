@@ -1,6 +1,7 @@
 var cards = [];
+var gameStarted = false;
 
-function start(event) {
+function start1(event) {
 		event.preventDefault();
 		
 		$("#primary-nav .international").siblings().removeClass("active");
@@ -40,6 +41,10 @@ function start(event) {
 			
 			$('#slide-down .drop.open').removeClass('open');
 		}
+}
+
+function start() {
+	gameStarted = true;
 }
 
 /* Show the back of all cards */
@@ -83,6 +88,11 @@ function turn(event) {
 	var whichImg = $(this).attr('id');
 	var card = 'queen';
 
+	if (!gameStarted) {
+		window.alert("Please start the game before turning a card.");
+		break;
+	}
+
 	if (card === 'queen') {
 		$("#"+whichImg+"").attr('src', 'img/Queen.png');
 	}
@@ -95,8 +105,9 @@ function turn(event) {
 }
 
 $(document).ready(function() {
-	$("#primary-nav .international").on("click",start);
+	$("#primary-nav .international").on("click",start1);
 	$(".card").on("click",turn);
+	$("#start").on("click",start);
 	$("#reset").on("click",reset);
 });
 

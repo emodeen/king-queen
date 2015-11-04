@@ -90,10 +90,9 @@ function turn(event) {
 
 	if (!gameStarted) {
 		window.alert("Please start the game before turning a card.");
-		break;
 	}
 
-	if (card === 'queen') {
+	else if (card === 'queen') {
 		$("#"+whichImg+"").attr('src', 'img/Queen.png');
 	}
 

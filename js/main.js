@@ -90,7 +90,13 @@ function reset() {
 	$("#pic3").attr('src', 'img/back-of-card.png');
 	$("#pic4").attr('src', 'img/back-of-card.png');
 
-	// empty the cards array	
+	// reset the card values
+	cards.forEach(function(entry) {
+		entry.faceShowing = false;
+    });
+		
+	numKings = 0;
+	numKings = 0;
 }
 
 function checkForMatch(card) {

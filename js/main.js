@@ -115,8 +115,9 @@ function turn(event) {
 	var whichImg = $(this).attr('id');
 	var rank;
 
-console.log(whichImg);
-	
+	// whether the card clicked on has already been turned
+	var alreadyTurned = false;
+
 	if (!gameStarted) {
 		window.alert("Please start the game before turning a card.");
 	}
@@ -127,23 +128,51 @@ console.log(whichImg);
 
 		if (whichImg === 'pic1') {
 			rank = cards[0].faceValue;
+			if (cards[0].faceShowing === true) {
+				alreadyTurned = true;
+			}
+			else {
+				cards[0].faceShowing = true;
+			}
 		}
 
 		else if (whichImg === 'pic2') {
 			rank = cards[1].faceValue;
+
+			if (cards[1].faceShowing === true) {
+				alreadyTurned = true;
+			}
+			else {
+				cards[1].faceShowing = true;
+			}			
 		}
 
 		else if (whichImg === 'pic3') {
 			rank = cards[2].faceValue;
+
+			if (cards[2].faceShowing === true) {
+				alreadyTurned = true;
+			}
+			else {
+				cards[2].faceShowing = true;
+			}			
 		}
 
 		else {
 			rank = cards[3].faceValue;
+
+			if (cards[3].faceShowing === true) {
+				alreadyTurned = true;
+			}
+			else {
+				cards[3].faceShowing = true;
+			}			
 		}
 
-		$("#"+whichImg+"").attr('src', 'img/'+rank+'.png');
-
-		checkForMatch(rank);
+		if (!alreadyTurned) {
+			$("#"+whichImg+"").attr('src', 'img/'+rank+'.png');
+	 		checkForMatch(rank);
+	    }
 	}
 }
 

@@ -78,7 +78,9 @@ function start() {
 	};
 
 	// populate the card array
-	cards = [card1, card2, card3, card4];			
+	cards = [card1, card2, card3, card4];
+
+	window.alert("The game has started!");			
 }
 
 /* Show the back of all cards */

@@ -1,4 +1,14 @@
+
+// An array of card objects
+// Each object contains the card type and whether the face is showing
 var cards = [];
+
+// The number of king cards that have been turned over
+var numKings = 0;
+// The number of queen cards that have been turned over
+var numQueens = 0;
+
+// Boolean indicating if the user has clicked 'Start'
 var gameStarted = false;
 
 function start1(event) {
@@ -45,6 +55,30 @@ function start1(event) {
 
 function start() {
 	gameStarted = true;
+
+	// initialize card array objects
+	var card1 = {
+		faceValue : 'King',
+		faceShowing : false
+	};
+
+	var card2 = {
+		faceValue : 'Queen',
+		faceShowing : false
+	};
+
+	var card3 = {
+		faceValue : 'Queen',
+		faceShowing : false
+	};
+
+	var card4 = {
+		faceValue : 'King',
+		faceShowing : false
+	};
+
+	// populate the card array
+	cards = [card1, card2, card3, card4];			
 }
 
 /* Show the back of all cards */
@@ -59,48 +93,58 @@ function reset() {
 
 function checkForMatch(card) {
 
-	var numKings = 0;
-	var numQueens = 0;
+	// if queen, increment queen count
+	if (card === 'Queen') {
+		numQueens++;
+	}
+	// else, increment king count
+	else {
+		numKings++;
+	}
 
-	cards.push(card);
-
-	cards.forEach(function(entry) {
-		// if queen, increment queen count
-		if (entry === 'queen') {
-			numQueens++;
-		}
-		// else, increment king count
-		else {
-			numKings++;
-		}
-
-		// check if there is a match
-		if ((numQueens === 2) || (numKings === 2)) {
-			// inform user that they found a match
-			window.alert("You found a match!");
-		}
-    });
+	// check if there is a match
+	if ((numQueens === 2) || (numKings === 2)) {
+		// inform user that they found a match
+		window.alert("You found a match!");
+	}
 }
 
 function turn(event) {
 	event.preventDefault();
 
 	var whichImg = $(this).attr('id');
-	var card = 'queen';
+	var rank;
 
+console.log(whichImg);
+	
 	if (!gameStarted) {
 		window.alert("Please start the game before turning a card.");
 	}
 
-	else if (card === 'queen') {
-		$("#"+whichImg+"").attr('src', 'img/Queen.png');
-	}
-
 	else {
-		$("#"+whichImg+"").attr('src', 'img/King.png');
-	}
+		// check if the card that was turned is a king or queen.
+		// then change the image to a king or queen
 
-	checkForMatch(card);
+		if (whichImg === 'pic1') {
+			rank = cards[0].faceValue;
+		}
+
+		else if (whichImg === 'pic2') {
+			rank = cards[1].faceValue;
+		}
+
+		else if (whichImg === 'pic3') {
+			rank = cards[2].faceValue;
+		}
+
+		else {
+			rank = cards[3].faceValue;
+		}
+
+		$("#"+whichImg+"").attr('src', 'img/'+rank+'.png');
+
+		checkForMatch(rank);
+	}
 }
 
 $(document).ready(function() {

@@ -11,6 +11,9 @@ var numQueens = 0;
 // Boolean indicating if the user has clicked 'Start'
 var gameStarted = false;
 
+// The number of moves that it took to find a match
+var numMoves = 0;
+
 function start() {
 	gameStarted = true;
 
@@ -55,6 +58,7 @@ function reset() {
 		
 	numKings = 0;
 	numQueens = 0;
+	numMoves = 0;
 }
 
 function checkForMatch(card) {
@@ -62,16 +66,18 @@ function checkForMatch(card) {
 	// if queen, increment queen count
 	if (card === 'Queen') {
 		numQueens++;
+		numMoves++;
 	}
 	// else, increment king count
 	else {
 		numKings++;
+		numMoves++;
 	}
 
 	// check if there is a match
 	if ((numQueens === 2) || (numKings === 2)) {
 		// inform user that they found a match
-		window.alert("You found a match!");
+		window.alert("You found a match! It took you " + numMoves + " moves.");
 		reset();
 	}
 }

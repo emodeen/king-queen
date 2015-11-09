@@ -114,6 +114,7 @@ function checkForMatch(card) {
 	if ((numQueens === 2) || (numKings === 2)) {
 		// inform user that they found a match
 		window.alert("You found a match!");
+		reset();
 	}
 }
 

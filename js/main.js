@@ -96,7 +96,7 @@ function reset() {
     });
 		
 	numKings = 0;
-	numKings = 0;
+	numQueens = 0;
 }
 
 function checkForMatch(card) {

@@ -74,6 +74,7 @@
 	color: white;
 	border: 1px solid black;
 	width: 600px;
+	margin: auto;
 }
 .drop {
 	padding: 20px;

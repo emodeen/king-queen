@@ -68,13 +68,12 @@
 
 
 /* Slide Down */
-#slide-down {
+#card-area {
 	overflow: hidden;
-	background: #666;
-
-	/* Example article title text below the image */
+	background: #FFF;
 	color: white;
-	border-bottom: 1px solid black;
+	border: 1px solid black;
+	width: 600px;
 }
 .drop {
 	padding: 20px;

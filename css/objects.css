@@ -29,7 +29,6 @@
 	margin-top: 20px;
 }
 
-
 /* Article Thumbs */
 .article-thumbs {
 	margin: 0 -5px;
@@ -47,29 +46,12 @@
 	-moz-transition: background 300ms;
 	transition: background 300ms;
 }
-.article-thumbs article a:hover {
-	background: rgba(255,255,255,.15);
-}
+
 .article-thumbs article a figure {
-	border: 1px solid black;
 	float: left;
 }
 .article-thumbs article a figure img {
 	display: block;
-}
-.article-thumbs article a hgroup {
-	clear: left;
-	padding-top: 8px;
-}
-.article-thumbs article a h4 {
-	color: #f6f666;
-	font-size: .75em;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: .1em;
-	margin-bottom: 2px;
-}
-.article-thumbs article a h2 {
 }
 
 /* Main Article */

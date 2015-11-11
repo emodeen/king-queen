@@ -19,7 +19,7 @@
 	background: #FFF;
 	color: white;
 	border: 1px solid black;
-	width: 600px;
+	width: 430px;
 	margin: auto;
 }
 .drop {
@@ -93,7 +93,7 @@
 }
 .article-thumbs article {
 	float: left;
-	width: 16.66666%;
+	width: 100px;
 }
 .article-thumbs article a {
 	display: block;

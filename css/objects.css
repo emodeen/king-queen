@@ -3,14 +3,10 @@
 	text-align: center;
 }
 #page-header h1 {
-	font-family: 'Old Standard TT', serif;
 	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 3.6em;
+	font-size: 2em;
 	line-height: 1;
 	margin: .5em;
-	word-spacing: .2em;
-	text-shadow: 1px 1px 0 white, 2px 2px 0 rgba(0,0,0,.2);
 }
 
 /* Slide Down */
@@ -34,10 +30,9 @@
 /* User Nav */
 #user-nav {
 	position: relative;
-	font-size: .75em;
+	font-size: 2em;
 	padding: 0 20px;
 	background: #EEE;
-	border-bottom: 1px solid #CCC;
 }
 #user-nav ul {
 	float: right;

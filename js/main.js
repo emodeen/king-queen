@@ -41,7 +41,26 @@ function start() {
 	// populate the card array
 	cards = [card1, card2, card3, card4];
 
+	shuffle();
+
 	window.alert("The game has started!");			
+}
+
+function shuffle() {
+    var currentIndex = cards.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = cards[currentIndex];
+      cards[currentIndex] = cards[randomIndex];
+      cards[randomIndex] = temporaryValue;
+    }
 }
 
 /* Show the back of all cards */
@@ -55,6 +74,8 @@ function reset() {
 	cards.forEach(function(entry) {
 		entry.faceShowing = false;
     });
+
+    shuffle();
 		
 	numKings = 0;
 	numQueens = 0;

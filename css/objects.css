@@ -17,16 +17,10 @@
 	color: white;
 	border: 1px solid black;
 	border-radius: 10px;
-	width: 430px;
+	width: 390px;
 	margin: auto;
 	padding: 30px;
 }
-
-/*
-.drop {
-	padding: 20px;
-}
-*/
 
 /* Main */
 #main {

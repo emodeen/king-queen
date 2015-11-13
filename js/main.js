@@ -171,7 +171,6 @@ function turn(event) {
 }
 
 $(document).ready(function() {
-	$('.drop.international').show();
 	$(".card").on("click",turn);
 	$("#start").on("click",start);
 	$("#reset").on("click",reset);
